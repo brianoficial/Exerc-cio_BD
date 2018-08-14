@@ -5,11 +5,13 @@
  */
 package br.simoneflorincy.contrlole_de_gastos_poo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class Funcionario {
+public class Funcionario implements Serializable {
 
     /**
      * @return the nick

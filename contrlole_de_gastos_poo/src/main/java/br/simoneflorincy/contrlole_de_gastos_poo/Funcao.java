@@ -5,11 +5,13 @@
  */
 package br.simoneflorincy.contrlole_de_gastos_poo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class Funcao {
+public class Funcao implements Serializable {
 
     /**
      * @return the acessoRestrito

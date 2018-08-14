@@ -1,4 +1,4 @@
---
+﻿--
 -- PostgreSQL database dump
 --
 
@@ -9,7 +9,6 @@
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -132,8 +131,7 @@ ALTER TABLE public.ordem_servico OWNER TO postgres;
 -- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.cliente (cd_cliente, endereco_cd_endereco, nm_razaosocial, nm_fantasia, ds_email, cod_identificacao, tipo_cliente, tp_visivel) FROM stdin;
-\.
+
 
 
 --
@@ -142,8 +140,7 @@ COPY public.cliente (cd_cliente, endereco_cd_endereco, nm_razaosocial, nm_fantas
 -- Data for Name: endereco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.endereco (cd_endereco, nm_rua, nr_casa, ds_complemento, nm_bairro, nm_cidade, ds_cep, telefone1, telefone2) FROM stdin;
-\.
+
 
 
 --
@@ -152,8 +149,7 @@ COPY public.endereco (cd_endereco, nm_rua, nr_casa, ds_complemento, nm_bairro, n
 -- Data for Name: funcao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.funcao (cd_funcao, ds_funcao, tp_visivel) FROM stdin;
-\.
+
 
 
 --
@@ -162,8 +158,7 @@ COPY public.funcao (cd_funcao, ds_funcao, tp_visivel) FROM stdin;
 -- Data for Name: funcionario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.funcionario (cd_funcionario, funcao_cd_funcao, endereco_cd_endereco, nm_funcionario, ds_senha, nick, tp_invisivel) FROM stdin;
-\.
+
 
 
 --
@@ -172,8 +167,7 @@ COPY public.funcionario (cd_funcionario, funcao_cd_funcao, endereco_cd_endereco,
 -- Data for Name: ordem_servico; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.ordem_servico (cd_ordem_servico, funcionario_cd_funcionario, cliente_cd_cliente, dt_ordem_servico, vl_total, bool_fechado) FROM stdin;
-\.
+
 
 
 --

@@ -5,13 +5,14 @@
  */
 package br.simoneflorincy.contrlole_de_gastos_poo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author User
  */
-public class OrdemServico {
+public class OrdemServico implements Serializable {
 
     /**
      * @return the data

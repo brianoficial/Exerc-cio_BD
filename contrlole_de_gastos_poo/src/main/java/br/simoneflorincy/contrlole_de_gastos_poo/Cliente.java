@@ -5,27 +5,62 @@
  */
 package br.simoneflorincy.contrlole_de_gastos_poo;
 
+import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 /**
  *
  * @author User
  */
-public class Cliente {
+@Entity
+@Table(name = "cliente") 
+public class Cliente implements Serializable {
+
+    @Column(name = "cd_cliente")
+    @Id
+            
+    Integer codCLiente;
+    @Column(name = "cod_identificao")
+    private Integer codIdentificacao;
+    @Column(name = "ds_email")
+    private String email;
+    @Column(name = "nm_fantasia")
+    private String nomeFantasia;
+    @Column(name = "nm_razaosocial")
+    private String razaoSocial;
+    @Column(name = "tipo_cliente")
+    private String tipoCliente;
+    @Column(name = "endereco_cd_endereco")
+    @OneToOne(targetEntity = Endereco.class,
+            cascade = CascadeType.REMOVE,
+            fetch = FetchType.EAGER)
+    private Endereco enderecoDoCliente;
+    @Column
+    Character visivel;
 
     /**
      * @return the codIdentificacao
      */
-    public String getCodIdentificacao() {
+    public Integer getCodIdentificacao() {
         return codIdentificacao;
     }
 
     /**
      * @param codIdentificacao the codIdentificacao to set
      */
-    public void setCodIdentificacao(String codIdentificacao) {
+    public void setCodIdentificacao(Integer codIdentificacao) {
         this.codIdentificacao = codIdentificacao;
     }
 
     /**
+     * https://github.com/brianoficial/Exerc-cio_BD.git
+     *
      * @return the email
      */
     public String getEmail() {
@@ -94,11 +129,4 @@ public class Cliente {
     public void setEnderecoDoCliente(Endereco enderecoDoCliente) {
         this.enderecoDoCliente = enderecoDoCliente;
     }
-   private String codIdentificacao;
-   private String email;
-   private String nomeFantasia;
-   private String razaoSocial;
-   private String tipoCliente; 
-   private Endereco enderecoDoCliente;
-    
 }
