@@ -21,8 +21,6 @@ public class Endereco implements Serializable {
     
     @Id
     @Column(name = "cd_endereco")
-
-    
     Integer codEndereco;
     @Column(name = "nm_bairro")
     private String bairro;

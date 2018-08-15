@@ -41,7 +41,7 @@ public class Cliente implements Serializable {
             cascade = CascadeType.REMOVE,
             fetch = FetchType.EAGER)
     private Endereco enderecoDoCliente;
-    @Column
+    @Column(name="tp_visivel")
     Character visivel;
 
     /**
