@@ -7,13 +7,42 @@ package br.simoneflorincy.contrlole_de_gastos_poo;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author User
  */
+@Entity
+@Table(name="ordem_servico")
 public class OrdemServico implements Serializable {
-
+    
+    @Id
+    @Column(name="cd_ordem_servico")
+    Integer codOrdem_servico;
+    @Column (name="dt_ordem_servico")        
+    private Date data;
+    @Column (name="vl_total")
+    private double valorTotal;
+    @Column (name="funcionario_cd_funcionario")
+    @OneToOne(targetEntity = Funcionario.class, 
+            cascade = CascadeType.REMOVE, 
+            fetch = FetchType.EAGER)
+    private Funcionario funcionario;
+    @Column (name="cliente_cd_clinte")
+    @OneToOne(targetEntity = Cliente.class, 
+            cascade = CascadeType.REMOVE, 
+            fetch = FetchType.EAGER)
+    private Cliente cliente;
+    @Column(name="bool_fechado")
+    private Boolean fechado;
+   
     /**
      * @return the data
      */
@@ -69,10 +98,7 @@ public class OrdemServico implements Serializable {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    private Date data;
-    private double valorTotal;
-    private Funcionario funcionario;
-    private Cliente cliente;
+
     
     
     
